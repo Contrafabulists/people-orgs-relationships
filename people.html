@@ -1,0 +1,35 @@
+---
+layout: default
+title: Think Tanks
+---
+
+<!-- Organizations -->
+{% assign organizations = site.data.organizations %}
+{% assign organizations = organizations | sort:"Name" %}
+
+<!-- People -->
+{% assign people = site.data.people %}
+{% assign people = people | sort:"Name" %}
+
+<!-- Relationships -->
+{% assign relationships = site.data.relationships %}
+{% assign relationships = relationships %}
+
+<h1>Relationships Are Hard - 4</h1>
+
+{% for person in people %}
+
+  <p>{{ person.Name }}</p>
+
+  <h2>Organizations</h2>
+  <ul>
+  {% for organization in organizations %}
+    {% for relationship in relationships %}
+      {% if relationship.Organization == organization.Name and relationship.Person == person.Name %}
+        <li>{{ organization.Name }} ({{ relationship.Relationship }})</li>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+  </ul>
+
+{% endfor %}
