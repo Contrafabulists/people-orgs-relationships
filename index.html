@@ -15,14 +15,16 @@ title: Think Tanks
 {% assign relationships = site.data.relationships %}
 {% assign relationships = relationships %}
 
-<h1>Relationships Are Hard - 1</h1>
+<h1>Relationships Are Hard - 2</h1>
 
 {% for organization in organizations %}
 
-<p>{{ organization.Name }}</p>
+  <p>{{ organization.Name }}</p>
 
   {% for person in people %}
+    <p>1) {{ person.Name }}</p>
     {% for relationship in relationships %}
+    <p>2) {{ relationship.Person }} ==  {{ relationship.Organization }}</p>
       {% if relationship.Organization == organization.Name and relationship.Person == organization.Person %}
         <p>{{ person.Name }}</p>
       {% endif %}
