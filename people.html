@@ -21,7 +21,7 @@ title: Think Tanks
 
   <p>{{ person.Name }}</p>
 
-  <h2>Organizations</h2>
+  <p>Organizations:</p>
   <ul>
   {% for organization in organizations %}
     {% for relationship in relationships %}
@@ -31,5 +31,5 @@ title: Think Tanks
     {% endfor %}
   {% endfor %}
   </ul>
-
+  <hr />
 {% endfor %}
