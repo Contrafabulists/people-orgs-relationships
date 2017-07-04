@@ -22,10 +22,8 @@ title: Think Tanks
   <p>{{ organization.Name }}</p>
 
   {% for person in people %}
-    <p>1) {{ person.Name }}</p>
     {% for relationship in relationships %}
-    <p>2) {{ relationship.Person }} ==  {{ relationship.Organization }}</p>
-      {% if relationship.Organization == organization.Name and relationship.Person == organization.Person %}
+      {% if relationship.Organization == organization.Name and relationship.Person == person.Name %}
         <p>{{ person.Name }}</p>
       {% endif %}
     {% endfor %}
