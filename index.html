@@ -17,4 +17,10 @@ title: Think Tanks
 
 {% for organization in organizations %}
 
+<p>{{ organization.Name }}</p>
+
+  {% for person in people %}
+    <p>{{ person.Name }}</p>
+  {% endfor %}
+
 {% endfor %}
